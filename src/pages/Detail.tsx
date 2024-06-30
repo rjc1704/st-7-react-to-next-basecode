@@ -1,22 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate, useParams } from "react-router-dom";
 import { getDetail } from "../api/todos";
-import { Todo } from "../types/todo.type";
-import { AxiosError } from "axios";
 
 export default function Detail() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const { data, isPending, error } = useQuery<
-    Todo,
-    AxiosError,
-    Todo,
-    [string, string]
-  >({
+  const { data, isPending, error } = useQuery({
     queryKey: ["todos", id!],
     queryFn: getDetail,
-    enabled: !!id,
   });
 
   if (isPending) return <div style={{ fontSize: 36 }}>로딩중...</div>;

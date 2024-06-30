@@ -1,15 +1,13 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { todoApi } from "../api/todos";
-import { Todo } from "../types/todo.type";
-import { AxiosError } from "axios";
 
 export default function TodoForm() {
-  const [title, setTitle] = useState<string>("");
-  const [contents, setContents] = useState<string>("");
+  const [title, setTitle] = useState("");
+  const [contents, setContents] = useState("");
 
   const queryClient = useQueryClient();
-  const addMutation = useMutation<Todo, AxiosError, Todo>({
+  const addMutation = useMutation({
     mutationFn: async (newTodo) => {
       const response = await todoApi.post("/todos", newTodo);
       return response.data;
@@ -19,7 +17,7 @@ export default function TodoForm() {
     },
   });
 
-  const handleAddTodo: React.FormEventHandler<HTMLFormElement> = async (e) => {
+  const handleAddTodo = async (e) => {
     e.preventDefault();
     setTitle("");
     setContents("");

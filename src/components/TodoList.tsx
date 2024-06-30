@@ -3,7 +3,6 @@ import { useInView } from "react-intersection-observer";
 
 import TodoItem from "./TodoItem";
 import { todoApi } from "../api/todos";
-import { Todo } from "../types/todo.type";
 
 const ITEMS_PER_PAGE = 4;
 
@@ -15,7 +14,7 @@ export default function TodoList() {
     isFetchingNextPage,
     isPending,
     error,
-  } = useInfiniteQuery<Todo[], Error, Todo[], [string], number>({
+  } = useInfiniteQuery({
     queryKey: ["todos"],
     initialPageParam: 1,
     queryFn: async ({ pageParam }) => {
