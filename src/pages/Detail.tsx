@@ -7,7 +7,7 @@ export default function Detail() {
   const navigate = useNavigate();
 
   const { data, isPending, error } = useQuery({
-    queryKey: ["todos", id!],
+    queryKey: ["todos", id],
     queryFn: getDetail,
   });
 
