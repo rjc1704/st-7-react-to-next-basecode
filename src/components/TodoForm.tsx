@@ -1,6 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
-import { todoApi } from "../api/todos";
 
 export default function TodoForm() {
   const [title, setTitle] = useState("");
@@ -9,8 +8,17 @@ export default function TodoForm() {
   const queryClient = useQueryClient();
   const addMutation = useMutation({
     mutationFn: async (newTodo) => {
-      const response = await todoApi.post("/todos", newTodo);
-      return response.data;
+      const response = await fetch("http://localhost:4000/todos", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTodo),
+      });
+      if (!response.ok) {
+        throw new Error(`Failed to post todo`);
+      }
+      return await response.json();
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["todos"] });
