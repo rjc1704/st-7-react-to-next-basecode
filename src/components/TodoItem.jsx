@@ -12,6 +12,12 @@ function TodoItem({ todo }) {
       }}
     >
       <h3>{todo.title}</h3>
+      <img
+        src={`${todo.imgPath}?random=${Math.random()}`}
+        alt="투두 이미지"
+        width={50}
+        height={50}
+      />
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <button onClick={() => navigate(`/todolist/${todo.id}`)}>
           내용보기

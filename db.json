@@ -69,32 +69,24 @@
       "title": "1",
       "contents": "1",
       "isCompleted": false,
-      "liked": false,
+      "imgPath": "https://picsum.photos/50/50",
       "createdAt": 1718587545473
     },
     {
-      "id": "1718587550672",
+      "id": "1734274898026",
       "title": "2",
       "contents": "2",
       "isCompleted": false,
-      "liked": true,
-      "createdAt": 1718587550672
+      "imgPath": "https://picsum.photos/50/50",
+      "createdAt": 1734274898026
     },
     {
-      "id": "1718594820497",
+      "id": "1734275140694",
       "title": "3",
       "contents": "3",
       "isCompleted": false,
-      "liked": false,
-      "createdAt": 1718594820497
-    },
-    {
-      "id": "1734270404405",
-      "title": "4",
-      "contents": "4",
-      "isCompleted": false,
-      "liked": false,
-      "createdAt": 1734270404405
+      "imgPath": "https://picsum.photos/50/50",
+      "createdAt": 1734275140694
     }
   ]
 }

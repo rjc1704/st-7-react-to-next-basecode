@@ -34,7 +34,7 @@ export default function TodoForm() {
       title,
       contents,
       isCompleted: false,
-      liked: false,
+      imgPath: "https://picsum.photos/250/250",
       createdAt: Date.now(),
     });
   };
