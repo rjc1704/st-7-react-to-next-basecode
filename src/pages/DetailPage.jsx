@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { getDetail } from "../api/todos";
 
-export default function Detail() {
+export default function DetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -20,8 +20,16 @@ export default function Detail() {
   }
 
   return (
-    <div>
-      <button onClick={() => navigate("/")}>홈으로 이동</button>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        marginTop: "20px",
+      }}
+    >
+      <Link to="/todolist">전체리스트 화면으로 이동</Link>
+      <h2>상세페이지</h2>
       <p>제목: {data.title}</p>
       <p>내용: {data.contents}</p>
       <p>작성일자: {new Date(data.createdAt).toDateString()}</p>
