@@ -1,10 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getDetail } from "../api/todos";
 
 export default function DetailPage() {
   const { id } = useParams();
-  const navigate = useNavigate();
 
   const { data, isPending, error } = useQuery({
     queryKey: ["todos", id],
