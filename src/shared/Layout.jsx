@@ -13,7 +13,7 @@ export default function Layout() {
           </li>
 
           <li className="nav-item">
-            <Link to="news" className="nav-link">
+            <Link to="/news" className="nav-link">
               News(ISR)
             </Link>
           </li>
