@@ -27,7 +27,9 @@ export default function DetailPage() {
         marginTop: "20px",
       }}
     >
-      <Link to="/todolist">전체리스트 화면으로 이동</Link>
+      <Link style={{ backgroundColor: "lightblue" }} to="/todolist">
+        전체리스트 화면으로 이동
+      </Link>
       <h2>상세페이지</h2>
       <p>제목: {data.title}</p>
       <p>내용: {data.contents}</p>
