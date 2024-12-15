@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "../pages/HomePage";
+import HomePage from "../pages/HomePage";
 import Detail from "../pages/DetailPage";
 import Layout from "./Layout";
 import TodoListPage from "../pages/TodoListPage";
@@ -11,7 +11,7 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/todolist" element={<TodoListPage />} />
           <Route path="/todolist/:id/" element={<Detail />} />
           <Route path="/news" element={<NewsPage />} />
